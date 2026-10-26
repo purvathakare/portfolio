@@ -21,6 +21,9 @@
       <span class="pulse-dot"></span>
       <span>IP: DETECTING...</span>
     </a>
+    <button class="admin-vault-trigger-btn" id="btn-open-admin" title="Site Owner / Admin Access (Ctrl+Shift+A)">
+      <span>🔒</span> Admin Portal
+    </button>
     <div style="font-size: 0.75rem; font-weight: 700; color: #8a7d91;">
       SYMBIOSIS INSTITUTE OF TECHNOLOGY // NAGPUR
     </div>
@@ -757,8 +760,11 @@
         </div>
       </div>
 
-      <div style="display: flex; justify-content: space-between; margin-top: 24px;">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 24px; flex-wrap: wrap; gap: 10px;">
         <button class="nav-pill-btn" data-target-stage="radar">◀ IP Radar</button>
+        <button class="admin-vault-trigger-btn" id="btn-footer-admin">
+          <span>🔒</span> Site Owner Admin
+        </button>
         <button class="nav-pill-btn" data-target-stage="cover">Cover Home ▶</button>
       </div>
     </section>
@@ -771,6 +777,160 @@
       <button class="modal-close-btn" id="modal-close">✕</button>
       <h3 id="modal-quest-title" style="color: #222222; font-size: 1.25rem; font-weight: 800; margin-bottom: 12px;"></h3>
       <div id="modal-quest-body"></div>
+    </div>
+  </div>
+
+  <!-- ===============================================================
+       ADMIN ACCESS // PIN AUTHENTICATION MODAL
+       =============================================================== -->
+  <div class="modal-overlay" id="admin-pin-modal" role="dialog" aria-modal="true" aria-labelledby="pin-modal-heading">
+    <div class="modal-content admin-modal-card" style="max-width: 440px !important;">
+      <button class="modal-close-btn" id="admin-pin-modal-close" aria-label="Close modal">✕</button>
+      <div class="admin-classified-tag">TOP SECRET // SITE OWNER CLEARANCE</div>
+      <h3 id="pin-modal-heading" style="color: #222222; font-size: 1.3rem; font-weight: 800; margin-bottom: 6px;">
+        Admin Clearance Vault
+      </h3>
+      <p style="color: #666666; font-size: 0.82rem; margin-bottom: 16px;">
+        Restricted to Purva Thakare (Site Owner). Enter your authorization PIN to view real-time visitor IP surveillance logs.
+      </p>
+
+      <form id="admin-pin-form" class="admin-pin-screen">
+        <label for="admin-pin-input" style="font-size: 0.75rem; font-weight: 700; color: #865593; letter-spacing: 1px; display: block; text-transform: uppercase;">
+          Enter Admin PIN Code
+        </label>
+        <input type="password" id="admin-pin-input" class="admin-pin-field" placeholder="••••••••" maxlength="20" autocomplete="current-password" required autofocus>
+        <div id="admin-pin-error-msg" class="admin-pin-error">Incorrect PIN. Access Denied.</div>
+        
+        <div style="display: flex; gap: 10px; justify-content: center; margin-top: 16px;">
+          <button type="submit" class="admin-action-btn" style="padding: 10px 24px; font-size: 0.88rem;">
+            🔓 Unlock Console
+          </button>
+          <button type="button" class="admin-action-btn btn-secondary" id="btn-cancel-pin">
+            Cancel
+          </button>
+        </div>
+      </form>
+
+      <div style="margin-top: 18px; text-align: center; font-size: 0.72rem; color: #888888; border-top: 1px dashed #ddd; padding-top: 10px;">
+        💡 Default Master PIN: <strong style="color: #865593;">purva2026</strong> (can be customized inside)
+      </div>
+    </div>
+  </div>
+
+  <!-- ===============================================================
+       ADMIN ACCESS // VISITOR IP SURVEILLANCE DASHBOARD MODAL
+       =============================================================== -->
+  <div class="modal-overlay" id="admin-dashboard-modal" role="dialog" aria-modal="true" aria-labelledby="admin-dash-heading">
+    <div class="modal-content admin-modal-card">
+      <button class="modal-close-btn" id="admin-dash-modal-close" aria-label="Close modal">✕</button>
+      
+      <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 10px;">
+        <div>
+          <div class="admin-classified-tag">CLASSIFIED // VISITOR SURVEILLANCE LOG</div>
+          <h2 id="admin-dash-heading" style="color: #222222; font-size: 1.45rem; font-weight: 800; margin-bottom: 4px;">
+            Visitor IP Intelligence Console
+          </h2>
+          <div style="font-size: 0.78rem; color: #666666;">
+            Authenticated as: <strong style="color: #865593;">Purva Thakare (Admin)</strong> // Real-time cross-device visitor traffic
+          </div>
+        </div>
+
+        <button class="admin-action-btn btn-secondary" id="btn-admin-logout" style="font-size: 0.72rem; padding: 6px 12px;">
+          🔒 Lock Console
+        </button>
+      </div>
+
+      <!-- Live Metrics Cards -->
+      <div class="admin-metrics-row" style="margin-top: 20px;">
+        <div class="admin-metric-card">
+          <div class="admin-metric-num" id="admin-metric-total">0</div>
+          <div class="admin-metric-label">TOTAL VISITS RECORDED</div>
+        </div>
+        <div class="admin-metric-card">
+          <div class="admin-metric-num" id="admin-metric-unique">0</div>
+          <div class="admin-metric-label">UNIQUE VISITOR IPS</div>
+        </div>
+        <div class="admin-metric-card">
+          <div class="admin-metric-num" style="color: #2e7d32;" id="admin-metric-sync">LIVE</div>
+          <div class="admin-metric-label">CLOUD TELEMETRY SYNC</div>
+        </div>
+      </div>
+
+      <!-- Action Toolbar (Search, Refresh, CSV Export) -->
+      <div class="admin-toolbar-row">
+        <input type="text" id="admin-search-input" class="admin-search-input" placeholder="🔍 Search IP, City, Country, or ISP...">
+        
+        <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+          <button class="admin-action-btn btn-secondary" id="btn-admin-refresh" title="Pull latest incoming visitor logs from cloud">
+            🔄 Refresh
+          </button>
+          <button class="admin-action-btn" id="btn-admin-export" title="Download all visitor IPs as CSV file">
+            📥 Export CSV
+          </button>
+          <button class="admin-action-btn btn-secondary" id="btn-admin-clear" title="Clear current visitor log history" style="color: #c0392b; border-color: #c0392b;">
+            🗑️ Clear
+          </button>
+        </div>
+      </div>
+
+      <!-- Admin IP Table Wrapper -->
+      <div class="admin-table-wrapper">
+        <table class="admin-ip-table" id="admin-visitor-table">
+          <thead>
+            <tr>
+              <th style="min-width: 140px;">IP Address</th>
+              <th style="min-width: 150px;">Location (City, Country)</th>
+              <th style="min-width: 130px;">Network / ISP</th>
+              <th style="min-width: 130px;">Device & OS</th>
+              <th style="min-width: 130px;">Timestamp</th>
+            </tr>
+          </thead>
+          <tbody id="admin-visitor-tbody">
+            <!-- Dynamically populated via js/ip-tracker.js -->
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Real-Time Push Notifications & Cloud Webhook Settings -->
+      <div class="admin-cloud-card">
+        <div class="admin-cloud-header">
+          <span>📡</span> Real-Time Cloud Telemetry & Push Alerts
+        </div>
+        <p style="font-size: 0.78rem; color: #555555; line-height: 1.45; margin-bottom: 8px;">
+          Visitors are dispatched to your cloud feed in real time. You can receive an instant push notification on your phone whenever anyone opens your portfolio!
+        </p>
+        <div style="display: flex; gap: 12px; align-items: center; flex-wrap: wrap; margin-bottom: 12px;">
+          <a href="https://ntfy.sh/purva_portfolio_visitor_ips_2026" target="_blank" rel="noopener noreferrer" class="admin-action-btn" style="background: #865593; font-size: 0.75rem; padding: 6px 14px;">
+            🔔 Open Live Cloud Stream (ntfy.sh)
+          </a>
+          <span style="font-size: 0.74rem; color: #777;">
+            (Or subscribe on the free <a href="https://ntfy.sh" target="_blank" style="color: #865593; font-weight: bold;">ntfy Android/iOS app</a> to topic: <code>purva_portfolio_visitor_ips_2026</code>)
+          </span>
+        </div>
+
+        <div style="border-top: 1px dashed #dcd0de; padding-top: 10px; margin-top: 10px;">
+          <div style="font-size: 0.75rem; font-weight: 700; color: #444;">
+            Custom Webhook (Discord / Telegram / Custom API):
+          </div>
+          <div class="admin-cloud-input-row">
+            <input type="url" id="input-custom-webhook" class="admin-cloud-input" placeholder="https://discord.com/api/webhooks/... or https://your-server/webhook">
+            <button class="admin-action-btn" id="btn-save-webhook" style="font-size: 0.75rem; padding: 6px 12px;">Save Webhook</button>
+          </div>
+          <div id="webhook-save-status" style="font-size: 0.72rem; color: #2e7d32; margin-top: 4px; display: none;">Saved! Future visitors will trigger this webhook.</div>
+        </div>
+
+        <div style="border-top: 1px dashed #dcd0de; padding-top: 10px; margin-top: 10px;">
+          <div style="font-size: 0.75rem; font-weight: 700; color: #444;">
+            Change Admin Access PIN:
+          </div>
+          <div class="admin-cloud-input-row">
+            <input type="text" id="input-change-pin" class="admin-cloud-input" placeholder="New PIN (e.g. purva2026)">
+            <button class="admin-action-btn" id="btn-save-pin" style="font-size: 0.75rem; padding: 6px 12px;">Update PIN</button>
+          </div>
+          <div id="pin-save-status" style="font-size: 0.72rem; color: #2e7d32; margin-top: 4px; display: none;">Admin PIN updated successfully!</div>
+        </div>
+      </div>
+
     </div>
   </div>
 

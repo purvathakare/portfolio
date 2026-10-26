@@ -66,10 +66,22 @@ Faithfully crafted in the **Manila Folder, Stationery Paper & Hanging Student ID
    - Visitor telemetry ledger recording real visitors to the site (IP, location, ISP, device, timestamp).
    - Zero synthetic/fake data and no role column.
 
-9. **Section 8: Contact & Download Resume**:
-   - Direct links for Email ([`pthakare2602@gmail.com`](mailto:pthakare2602@gmail.com)), Phone (`+91 7999282181`), [Purva Thakare | LinkedIn](https://www.linkedin.com/in/purva-thakare-83b820320/), and GitHub.
-   - 1-Click Printable / PDF-ready Resume.
-   - Interactive transmission form.
+9. **🔒 Classified Site Owner / Admin Portal**:
+   - Protected clearance portal for Purva Thakare to view all IP addresses that have visited the site across devices.
+   - Accessible via **"🔒 Admin Portal"** in top HUD / footer or keyboard shortcut `Ctrl + Shift + A` (or `Cmd + Shift + A` on Mac).
+   - Protected by master clearance PIN (Default: `purva2026`, customizable inside settings).
+   - **Cross-Device Visitor Sync**: Live telemetry dispatched to an open cloud pub/sub channel (`ntfy.sh/purva_portfolio_visitor_ips_2026`).
+   - **Metrics Dashboard**: Total Recorded Visits, Unique IP count, Cloud Sync Status.
+   - **IP Intelligence Table**: Shows IP address (with 1-click `📋 Copy`), Location (City, State, Country), ISP/Network, Device/OS, and Timestamp.
+   - **Instant Search & Filter**: Filter live entries by IP, City, Country, or ISP.
+   - **📥 1-Click CSV Export**: Download the complete visitor IP registry as a `.csv` spreadsheet for offline records.
+   - **🔔 Mobile Push Notifications**: Purva can open the live feed directly on [ntfy.sh/purva_portfolio_visitor_ips_2026](https://ntfy.sh/purva_portfolio_visitor_ips_2026) or install the free ntfy mobile app to get phone alerts whenever someone visits!
+   - **Custom Webhook Integration**: Supports Discord/Telegram webhooks for automatic notifications.
+
+10. **Section 8: Contact & Download Resume**:
+    - Direct links for Email ([`pthakare2602@gmail.com`](mailto:pthakare2602@gmail.com)), Phone (`+91 7999282181`), [Purva Thakare | LinkedIn](https://www.linkedin.com/in/purva-thakare-83b820320/), and GitHub.
+    - 1-Click Printable / PDF-ready Resume.
+    - Interactive transmission form.
 
 ---
 

@@ -218,4 +218,217 @@ document.addEventListener('DOMContentLoaded', () => {
       contactForm.reset();
     });
   }
+
+  // ===================================================================
+  // 4. ADMIN PORTAL // VISITOR IP SURVEILLANCE VAULT CONTROLLER
+  // ===================================================================
+  const btnOpenAdmin = document.getElementById('btn-open-admin');
+  const btnFooterAdmin = document.getElementById('btn-footer-admin');
+  const adminPinModal = document.getElementById('admin-pin-modal');
+  const adminDashModal = document.getElementById('admin-dashboard-modal');
+  const adminPinForm = document.getElementById('admin-pin-form');
+  const adminPinInput = document.getElementById('admin-pin-input');
+  const adminPinError = document.getElementById('admin-pin-error-msg');
+  const adminPinClose = document.getElementById('admin-pin-modal-close');
+  const btnCancelPin = document.getElementById('btn-cancel-pin');
+  const adminDashClose = document.getElementById('admin-dash-modal-close');
+  const btnAdminLogout = document.getElementById('btn-admin-logout');
+  const adminSearchInput = document.getElementById('admin-search-input');
+  const btnAdminRefresh = document.getElementById('btn-admin-refresh');
+  const btnAdminExport = document.getElementById('btn-admin-export');
+  const btnAdminClear = document.getElementById('btn-admin-clear');
+  const inputCustomWebhook = document.getElementById('input-custom-webhook');
+  const btnSaveWebhook = document.getElementById('btn-save-webhook');
+  const webhookSaveStatus = document.getElementById('webhook-save-status');
+  const inputChangePin = document.getElementById('input-change-pin');
+  const btnSavePin = document.getElementById('btn-save-pin');
+  const pinSaveStatus = document.getElementById('pin-save-status');
+
+  function openAdminPortal() {
+    const isAuthed = sessionStorage.getItem('purva_admin_auth') === 'true';
+
+    if (isAuthed && adminDashModal) {
+      if (adminPinModal) adminPinModal.classList.remove('active');
+      adminDashModal.classList.add('active');
+
+      if (inputCustomWebhook) {
+        inputCustomWebhook.value = localStorage.getItem('purva_admin_custom_webhook') || '';
+      }
+
+      if (window.visitorTracker) {
+        window.visitorTracker.renderAdminDashboard(adminSearchInput ? adminSearchInput.value : '');
+        // Fetch fresh cloud telemetry in background and update
+        window.visitorTracker.fetchCloudVisitorLogs().then(() => {
+          window.visitorTracker.renderAdminDashboard(adminSearchInput ? adminSearchInput.value : '');
+        });
+      }
+    } else if (adminPinModal) {
+      if (adminDashModal) adminDashModal.classList.remove('active');
+      if (adminPinError) adminPinError.classList.remove('visible');
+      if (adminPinInput) adminPinInput.value = '';
+      adminPinModal.classList.add('active');
+      setTimeout(() => { if (adminPinInput) adminPinInput.focus(); }, 100);
+    }
+  }
+
+  function closeAdminModals() {
+    if (adminPinModal) adminPinModal.classList.remove('active');
+    if (adminDashModal) adminDashModal.classList.remove('active');
+  }
+
+  // Open triggers
+  if (btnOpenAdmin) {
+    btnOpenAdmin.addEventListener('click', (e) => {
+      e.preventDefault();
+      if (window.retroAudio) window.retroAudio.playSelect();
+      openAdminPortal();
+    });
+  }
+
+  if (btnFooterAdmin) {
+    btnFooterAdmin.addEventListener('click', (e) => {
+      e.preventDefault();
+      if (window.retroAudio) window.retroAudio.playSelect();
+      openAdminPortal();
+    });
+  }
+
+  // Close buttons
+  if (adminPinClose) adminPinClose.addEventListener('click', closeAdminModals);
+  if (btnCancelPin) btnCancelPin.addEventListener('click', closeAdminModals);
+  if (adminDashClose) adminDashClose.addEventListener('click', closeAdminModals);
+
+  // Overlay click to close
+  if (adminPinModal) {
+    adminPinModal.addEventListener('click', (e) => {
+      if (e.target === adminPinModal) closeAdminModals();
+    });
+  }
+  if (adminDashModal) {
+    adminDashModal.addEventListener('click', (e) => {
+      if (e.target === adminDashModal) closeAdminModals();
+    });
+  }
+
+  // Hotkey: Ctrl+Shift+A (or Cmd+Shift+A) & Escape
+  window.addEventListener('keydown', (e) => {
+    if ((e.ctrlKey || e.metaKey) && e.shiftKey && (e.key === 'A' || e.key === 'a')) {
+      e.preventDefault();
+      if ((adminPinModal && adminPinModal.classList.contains('active')) ||
+          (adminDashModal && adminDashModal.classList.contains('active'))) {
+        closeAdminModals();
+      } else {
+        openAdminPortal();
+      }
+    }
+    if (e.key === 'Escape') {
+      closeAdminModals();
+    }
+  });
+
+  // PIN Form Verification
+  if (adminPinForm) {
+    adminPinForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const entered = adminPinInput ? adminPinInput.value : '';
+      if (window.visitorTracker && window.visitorTracker.verifyAdminPin(entered)) {
+        sessionStorage.setItem('purva_admin_auth', 'true');
+        if (window.retroAudio) window.retroAudio.playPowerUp();
+        openAdminPortal();
+      } else {
+        if (adminPinError) adminPinError.classList.add('visible');
+        if (adminPinInput) {
+          adminPinInput.focus();
+          adminPinInput.select();
+        }
+      }
+    });
+  }
+
+  // Logout / Lock Console
+  if (btnAdminLogout) {
+    btnAdminLogout.addEventListener('click', () => {
+      sessionStorage.removeItem('purva_admin_auth');
+      closeAdminModals();
+      if (window.retroAudio) window.retroAudio.playJump();
+    });
+  }
+
+  // Search filter
+  if (adminSearchInput) {
+    adminSearchInput.addEventListener('input', (e) => {
+      if (window.visitorTracker) {
+        window.visitorTracker.renderAdminDashboard(e.target.value);
+      }
+    });
+  }
+
+  // Refresh
+  if (btnAdminRefresh) {
+    btnAdminRefresh.addEventListener('click', async () => {
+      if (window.retroAudio) window.retroAudio.playSelect();
+      const original = btnAdminRefresh.textContent;
+      btnAdminRefresh.textContent = '🔄 Syncing...';
+      if (window.visitorTracker) {
+        await window.visitorTracker.fetchCloudVisitorLogs();
+        window.visitorTracker.renderAdminDashboard(adminSearchInput ? adminSearchInput.value : '');
+      }
+      setTimeout(() => { btnAdminRefresh.textContent = original; }, 500);
+    });
+  }
+
+  // Export CSV
+  if (btnAdminExport) {
+    btnAdminExport.addEventListener('click', () => {
+      if (window.retroAudio) window.retroAudio.playPowerUp();
+      if (window.visitorTracker) {
+        window.visitorTracker.exportToCSV();
+      }
+    });
+  }
+
+  // Clear Logs
+  if (btnAdminClear) {
+    btnAdminClear.addEventListener('click', () => {
+      if (confirm('Are you sure you want to clear your visitor IP log history?')) {
+        if (window.visitorTracker) {
+          window.visitorTracker.clearVisitorLogs();
+        }
+      }
+    });
+  }
+
+  // Save Custom Webhook
+  if (btnSaveWebhook && inputCustomWebhook) {
+    btnSaveWebhook.addEventListener('click', () => {
+      if (window.visitorTracker) {
+        window.visitorTracker.saveCustomWebhook(inputCustomWebhook.value);
+        if (webhookSaveStatus) {
+          webhookSaveStatus.style.display = 'block';
+          setTimeout(() => { webhookSaveStatus.style.display = 'none'; }, 3000);
+        }
+      }
+    });
+  }
+
+  // Update Master PIN
+  if (btnSavePin && inputChangePin) {
+    btnSavePin.addEventListener('click', () => {
+      const newPin = inputChangePin.value;
+      if (window.visitorTracker) {
+        const success = window.visitorTracker.updateAdminPin(newPin);
+        if (success) {
+          inputChangePin.value = '';
+          if (pinSaveStatus) {
+            pinSaveStatus.textContent = 'Admin PIN updated successfully!';
+            pinSaveStatus.style.color = '#2e7d32';
+            pinSaveStatus.style.display = 'block';
+            setTimeout(() => { pinSaveStatus.style.display = 'none'; }, 3000);
+          }
+        } else {
+          alert('Admin PIN must be at least 4 characters long.');
+        }
+      }
+    });
+  }
 });
