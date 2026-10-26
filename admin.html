@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Purva Thakare | Classified Admin Surveillance Vault</title>
+  
+  <!-- Favicon Manila Folder Pin -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔒</text></svg>">
+
+  <!-- Shared Stylesheet -->
+  <link rel="stylesheet" href="css/retro-arcade.css">
+  <style>
+    body {
+      background-color: #2b2633;
+      background-image: 
+        radial-gradient(circle at 10% 20%, rgba(134, 85, 147, 0.25) 0%, transparent 40%),
+        radial-gradient(circle at 90% 80%, rgba(255, 230, 109, 0.15) 0%, transparent 40%),
+        repeating-linear-gradient(45deg, #26212e 0, #26212e 20px, #221d2a 20px, #221d2a 40px);
+      min-height: 100vh;
+      padding: 30px 16px;
+      color: #333333;
+    }
+
+    .admin-page-container {
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    /* Secret PIN Gate Screen */
+    .admin-gate-wrapper {
+      max-width: 480px;
+      margin: 60px auto;
+      background: #fbf9f5;
+      border: 3px solid #222222;
+      border-radius: 8px;
+      padding: 36px 30px;
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.4);
+      position: relative;
+    }
+
+    /* Admin Console Header */
+    .admin-console-header {
+      background: #fbf9f5;
+      border: 2px solid #222222;
+      border-radius: 8px;
+      padding: 24px;
+      margin-bottom: 24px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    /* Radar Panel Wrap inside Admin */
+    .admin-radar-card {
+      margin-bottom: 24px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="admin-page-container">
+
+    <!-- ===============================================================
+         GATE VIEW: PIN CODE AUTHENTICATION SCREEN
+         =============================================================== -->
+    <div id="admin-pin-gate" class="admin-gate-wrapper">
+      <div class="admin-classified-tag">TOP SECRET // SITE OWNER CLEARANCE</div>
+      
+      <h1 style="color: #222222; font-size: 1.5rem; font-weight: 800; margin: 8px 0;">
+        Admin Clearance Vault
+      </h1>
+      
+      <p style="color: #666666; font-size: 0.85rem; line-height: 1.5; margin-bottom: 20px;">
+        Restricted to <strong>Purva Thakare</strong>. Enter your master administrator PIN to unlock real-time visitor IP tracking, connection logs, and radar telemetry.
+      </p>
+
+      <form id="admin-pin-form" class="admin-pin-screen" style="padding: 10px 0;">
+        <label for="admin-pin-input" style="font-size: 0.75rem; font-weight: 700; color: #865593; letter-spacing: 1.5px; display: block; text-transform: uppercase;">
+          Master Authorization PIN
+        </label>
+        
+        <input type="password" id="admin-pin-input" class="admin-pin-field" placeholder="••••••••" maxlength="20" autocomplete="current-password" required autofocus>
+        
+        <div id="admin-pin-error-msg" class="admin-pin-error">Incorrect PIN. Access Denied.</div>
+
+        <div style="display: flex; gap: 12px; justify-content: center; margin-top: 18px;">
+          <button type="submit" class="admin-action-btn" style="padding: 10px 26px; font-size: 0.9rem;">
+            🔓 Unlock Admin Console
+          </button>
+          <a href="index.html" class="admin-action-btn btn-secondary" style="text-decoration: none; padding: 10px 18px; font-size: 0.85rem;">
+            ← Public Site
+          </a>
+        </div>
+      </form>
+
+      <div style="margin-top: 24px; text-align: center; font-size: 0.75rem; color: #888888; border-top: 1px dashed #dcd0de; padding-top: 14px;">
+        💡 Default Master PIN: <strong style="color: #865593;">purva2026</strong> (can be changed in settings)
+      </div>
+    </div>
+
+    <!-- ===============================================================
+         DASHBOARD VIEW: COMPLETE VISITOR IP SURVEILLANCE CONSOLE
+         =============================================================== -->
+    <div id="admin-dashboard-view" style="display: none;">
+
+      <!-- Top Header Ribbon -->
+      <div class="admin-console-header">
+        <div>
+          <div class="admin-classified-tag">CLASSIFIED // VISITOR SURVEILLANCE & RADAR LEDGER</div>
+          <h1 style="color: #222222; font-size: 1.6rem; font-weight: 800; margin: 4px 0;">
+            Visitor IP Intelligence Center
+          </h1>
+          <div style="font-size: 0.8rem; color: #666666;">
+            Authenticated as: <strong style="color: #865593;">Purva Thakare (Site Owner)</strong> // Cross-device real-time traffic
+          </div>
+        </div>
+
+        <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+          <a href="index.html" class="admin-action-btn btn-secondary" style="text-decoration: none; font-size: 0.78rem;">
+            🌐 View Public Site
+          </a>
+          <button class="admin-action-btn" id="btn-admin-logout" style="font-size: 0.78rem; background: #c0392b;">
+            🔒 Lock Console
+          </button>
+        </div>
+      </div>
+
+      <!-- Live Metrics Cards -->
+      <div class="admin-metrics-row">
+        <div class="admin-metric-card">
+          <div class="admin-metric-num" id="admin-metric-total">0</div>
+          <div class="admin-metric-label">TOTAL VISITS RECORDED</div>
+        </div>
+        <div class="admin-metric-card">
+          <div class="admin-metric-num" id="admin-metric-unique">0</div>
+          <div class="admin-metric-label">UNIQUE VISITOR IPS</div>
+        </div>
+        <div class="admin-metric-card">
+          <div class="admin-metric-num" style="color: #2e7d32;" id="admin-metric-sync">LIVE 🟢</div>
+          <div class="admin-metric-label">CLOUD TELEMETRY SYNC</div>
+        </div>
+        <div class="admin-metric-card">
+          <div class="admin-metric-num" style="font-size: 1.15rem; color: #2c3e50;" id="admin-metric-myip">Detecting...</div>
+          <div class="admin-metric-label">YOUR ADMIN IP</div>
+        </div>
+      </div>
+
+      <!-- Live Radar Scope Scanner Deck -->
+      <div class="radar-dossier-panel admin-radar-card">
+        <div class="radar-header-line">
+          <span>📡 LIVE VISITOR TELEMETRY RADAR</span>
+          <span style="color: #27ae60; font-size: 0.95rem; font-weight: 700;">● ACTIVE MONITORING NETWORK</span>
+        </div>
+
+        <div class="radar-scanner-deck">
+          <!-- Circular Radar Screen with rotating sweep beam -->
+          <div class="radar-scope-circle" id="radar-scope-container" title="Global Visitor Detection Radar">
+            <div class="radar-ring radar-ring-1"></div>
+            <div class="radar-ring radar-ring-2"></div>
+            <div class="radar-ring radar-ring-3"></div>
+            <div class="radar-crosshair-h"></div>
+            <div class="radar-crosshair-v"></div>
+            <div class="radar-sweep-beam"></div>
+            <!-- Live visitor blips injected via js/admin-portal.js -->
+          </div>
+
+          <!-- Radar Legend & Status -->
+          <div class="radar-legend-box">
+            <div style="font-weight: 800; font-size: 0.95rem; color: #ffe66d; margin-bottom: 4px;">
+              RADAR FREQUENCY LOG
+            </div>
+            <div class="legend-item">
+              <span class="legend-blip-dot" style="background: #39ff14; box-shadow: 0 0 6px #39ff14;"></span>
+              <span><strong>Green Blip:</strong> Admin Station (You)</span>
+            </div>
+            <div class="legend-item">
+              <span class="legend-blip-dot" style="background: #00f0ff; box-shadow: 0 0 6px #00f0ff;"></span>
+              <span><strong>Cyan Blips:</strong> Visitor Connections</span>
+            </div>
+            <div style="margin-top: 10px;">
+              <button class="nav-pill-btn" id="btn-ping-radar" style="font-size: 0.72rem; padding: 6px 14px; background: #39ff14; color: #000; border-color: #39ff14; cursor: pointer;">
+                📡 PING RADAR / RE-SCAN
+              </button>
+              <div id="radar-ping-feedback" style="font-size: 0.75rem; color: #39ff14; margin-top: 6px; font-weight: 600;"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Action Toolbar (Search, Refresh, CSV Export, Clear) -->
+      <div class="admin-toolbar-row" style="background: #ffffff; padding: 14px 18px; border: 1.5px solid #222222; border-radius: 8px; margin-bottom: 16px;">
+        <input type="text" id="admin-search-input" class="admin-search-input" placeholder="🔍 Search IP, City, Country, or ISP...">
+        
+        <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+          <button class="admin-action-btn btn-secondary" id="btn-admin-refresh" title="Pull latest incoming visitor logs from cloud">
+            🔄 Refresh
+          </button>
+          <button class="admin-action-btn" id="btn-admin-export" title="Download all visitor IPs as CSV file">
+            📥 Export CSV
+          </button>
+          <button class="admin-action-btn btn-secondary" id="btn-admin-clear" title="Clear current visitor log history" style="color: #c0392b; border-color: #c0392b;">
+            🗑️ Clear Logs
+          </button>
+        </div>
+      </div>
+
+      <!-- Real-Time Visitor IP Registry Table -->
+      <div class="admin-table-wrapper" style="box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25); border: 2px solid #222222;">
+        <table class="admin-ip-table" id="admin-visitor-table">
+          <thead>
+            <tr>
+              <th style="min-width: 140px;">Visitor IP</th>
+              <th style="min-width: 160px;">Geographic Location</th>
+              <th style="min-width: 130px;">Network / ISP</th>
+              <th style="min-width: 140px;">Client Device & OS</th>
+              <th style="min-width: 130px;">Timestamp</th>
+            </tr>
+          </thead>
+          <tbody id="admin-visitor-tbody">
+            <!-- Dynamically populated via js/admin-portal.js -->
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Real-Time Push Notifications & Cloud Webhook Settings -->
+      <div class="admin-cloud-card" style="box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2); background: #fbf9f5; border: 2px dashed #865593; margin-top: 24px;">
+        <div class="admin-cloud-header">
+          <span>📡</span> Real-Time Cloud Telemetry & Push Alerts
+        </div>
+        <p style="font-size: 0.82rem; color: #555555; line-height: 1.5; margin-bottom: 12px;">
+          Visitors are dispatched to your cloud feed in real time. You can view the live feed in any browser or receive an instant push notification on your mobile phone whenever someone opens your portfolio!
+        </p>
+
+        <div style="display: flex; gap: 12px; align-items: center; flex-wrap: wrap; margin-bottom: 16px;">
+          <a href="https://ntfy.sh/purva_portfolio_visitor_ips_2026" target="_blank" rel="noopener noreferrer" class="admin-action-btn" style="background: #865593; font-size: 0.8rem; padding: 8px 16px;">
+            🔔 Open Live Cloud Stream (ntfy.sh)
+          </a>
+          <span style="font-size: 0.78rem; color: #666;">
+            (Or install the free <a href="https://ntfy.sh" target="_blank" style="color: #865593; font-weight: bold;">ntfy app</a> on Android/iOS and subscribe to topic: <code>purva_portfolio_visitor_ips_2026</code>)
+          </span>
+        </div>
+
+        <div style="border-top: 1px dashed #dcd0de; padding-top: 12px; margin-top: 12px;">
+          <div style="font-size: 0.78rem; font-weight: 700; color: #333;">
+            Custom Webhook (Discord / Telegram / Custom API):
+          </div>
+          <div class="admin-cloud-input-row">
+            <input type="url" id="input-custom-webhook" class="admin-cloud-input" placeholder="https://discord.com/api/webhooks/... or https://your-server/webhook">
+            <button class="admin-action-btn" id="btn-save-webhook" style="font-size: 0.78rem; padding: 6px 14px;">Save Webhook</button>
+          </div>
+          <div id="webhook-save-status" style="font-size: 0.74rem; color: #2e7d32; margin-top: 4px; display: none;">Saved! Future visitors will trigger this webhook.</div>
+        </div>
+
+        <div style="border-top: 1px dashed #dcd0de; padding-top: 12px; margin-top: 12px;">
+          <div style="font-size: 0.78rem; font-weight: 700; color: #333;">
+            Change Admin Access PIN:
+          </div>
+          <div class="admin-cloud-input-row">
+            <input type="text" id="input-change-pin" class="admin-cloud-input" placeholder="New PIN (e.g. purva2026)">
+            <button class="admin-action-btn" id="btn-save-pin" style="font-size: 0.78rem; padding: 6px 14px;">Update PIN</button>
+          </div>
+          <div id="pin-save-status" style="font-size: 0.74rem; color: #2e7d32; margin-top: 4px; display: none;">Admin PIN updated successfully!</div>
+        </div>
+      </div>
+
+      <div style="text-align: center; margin-top: 28px; font-size: 0.78rem; color: #a9a0b0;">
+        Purva Thakare Portfolio Dossier &bull; Symbiosis Institute of Technology (SIT), Nagpur
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/retro-sound.js"></script>
+  <script src="js/admin-portal.js"></script>
+</body>
+</html>

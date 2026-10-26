@@ -60,28 +60,36 @@ Faithfully crafted in the **Manila Folder, Stationery Paper & Hanging Student ID
    - **Smart India Hackathon (SIH)** Participant
    - Inter-College Hackathons & Tech Symposiums
 
-8. **📡 Section 7: Live Visitor Telemetry & Real-Time IP Radar**:
-   - Real-time IP address detection via live public IP services (`ipapi.co`, `ipwho.is`, `api.ipify.org`).
-   - Circular radar scope with rotating 360-degree sweep beam and pulsing blips for active sessions.
-   - Visitor telemetry ledger recording real visitors to the site (IP, location, ISP, device, timestamp).
-   - Zero synthetic/fake data and no role column.
+8. **Section 6: Contact & Download Resume**:
+   - Direct links for Email ([`pthakare2602@gmail.com`](mailto:pthakare2602@gmail.com)), Phone (`+91 7999282181`), [Purva Thakare | LinkedIn](https://www.linkedin.com/in/purva-thakare-83b820320/), and GitHub.
+   - 1-Click Printable / PDF-ready Resume.
+   - Interactive transmission form.
 
-9. **🔒 Classified Site Owner / Admin Portal**:
-   - Protected clearance portal for Purva Thakare to view all IP addresses that have visited the site across devices.
-   - Accessible via **"🔒 Admin Portal"** in top HUD / footer or keyboard shortcut `Ctrl + Shift + A` (or `Cmd + Shift + A` on Mac).
-   - Protected by master clearance PIN (Default: `purva2026`, customizable inside settings).
-   - **Cross-Device Visitor Sync**: Live telemetry dispatched to an open cloud pub/sub channel (`ntfy.sh/purva_portfolio_visitor_ips_2026`).
-   - **Metrics Dashboard**: Total Recorded Visits, Unique IP count, Cloud Sync Status.
-   - **IP Intelligence Table**: Shows IP address (with 1-click `📋 Copy`), Location (City, State, Country), ISP/Network, Device/OS, and Timestamp.
-   - **Instant Search & Filter**: Filter live entries by IP, City, Country, or ISP.
-   - **📥 1-Click CSV Export**: Download the complete visitor IP registry as a `.csv` spreadsheet for offline records.
-   - **🔔 Mobile Push Notifications**: Purva can open the live feed directly on [ntfy.sh/purva_portfolio_visitor_ips_2026](https://ntfy.sh/purva_portfolio_visitor_ips_2026) or install the free ntfy mobile app to get phone alerts whenever someone visits!
-   - **Custom Webhook Integration**: Supports Discord/Telegram webhooks for automatic notifications.
+---
 
-10. **Section 8: Contact & Download Resume**:
-    - Direct links for Email ([`pthakare2602@gmail.com`](mailto:pthakare2602@gmail.com)), Phone (`+91 7999282181`), [Purva Thakare | LinkedIn](https://www.linkedin.com/in/purva-thakare-83b820320/), and GitHub.
-    - 1-Click Printable / PDF-ready Resume.
-    - Interactive transmission form.
+## 🔒 Two-Site Architecture (Public vs Admin)
+
+The deployment is split into two specialized sites:
+
+### 1. 🌐 Public Portfolio (`index.html`)
+- **For All Public Viewers (Recruiters, Classmates, General Public)**
+- Displays your complete Manila folder scrapbook dossier: Profile, ID Badge, Tech Timeline, Case Studies, Certifications, and Leadership.
+- **Zero IP Address Exposure**: No IP radar, no visitor counters, no IP badges, and no admin controls are shown to the public viewer.
+- **Silent Background Telemetry**: In the background, `js/visitor-telemetry.js` logs real visitors and dispatches cross-device telemetry to the cloud for the admin without displaying anything to the visitor.
+- **Secret Admin Shortcut**: Site owner can press **`Ctrl + Shift + A`** anywhere on `index.html` to jump directly to `admin.html`.
+
+### 2. 🛡️ Site Owner Admin Portal (`admin.html`)
+- **Exclusively for Purva Thakare**
+- **URL**: `https://purvathakare.github.io/portfolio/admin.html`
+- **PIN-Protected Gate**: Access requires master PIN (Default: `purva2026`).
+- **Full IP Surveillance & Radar**:
+  - Live 360-degree rotating sweep radar with dynamic blips for active sessions.
+  - Complete Visitor IP Registry table: IP address (with 1-click `📋 Copy`), Location (City, State, Country), ISP/Network, Device/OS, and Timestamp.
+  - Live Metrics: Total Recorded Visits, Unique IP Count, Cloud Telemetry Status, Your Current IP.
+  - Search & Filter bar for instant IP lookup.
+  - **📥 1-Click CSV Export**: Download the complete visitor IP registry as `purva_thakare_visitor_ips.csv`.
+  - **🔔 Mobile Push Alerts**: Direct cloud link to [ntfy.sh/purva_portfolio_visitor_ips_2026](https://ntfy.sh/purva_portfolio_visitor_ips_2026) and free mobile app notifications.
+  - Custom Webhook integration (Discord / Telegram) & PIN customizer.
 
 ---
 
@@ -90,16 +98,18 @@ Faithfully crafted in the **Manila Folder, Stationery Paper & Hanging Student ID
 ```
 purva-thakare-portfolio/
 │
-├── index.html                   # Master scrapbook portfolio with notebook index page
-├── README.md                    # Project documentation & GitHub Pages guide
+├── index.html                   # Public scrapbook portfolio (Zero IP data shown to public)
+├── admin.html                   # Dedicated Site Owner Admin Surveillance & IP Center
+├── README.md                    # Project documentation & deployment guide
 │
 ├── css/
 │   └── retro-arcade.css         # Manila folder, notebook index lines, ID badge & styles
 │
 ├── js/
 │   ├── retro-sound.js           # Web Audio API sound synthesizer
-│   ├── ip-tracker.js            # Live visitor IP & real-time telemetry tracker
-│   └── interactive-console.js   # Notebook index switcher & stage engine
+│   ├── visitor-telemetry.js     # Silent background visitor logging for index.html
+│   ├── admin-portal.js          # Admin surveillance, radar blips, & CSV export for admin.html
+│   └── interactive-console.js   # Public stage switcher & project inspection
 │
 └── assets/
     ├── images/
