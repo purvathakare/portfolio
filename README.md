@@ -67,29 +67,23 @@ Faithfully crafted in the **Manila Folder, Stationery Paper & Hanging Student ID
 
 ---
 
-## 🔒 Two-Site Architecture (Public vs Admin)
+## 🔒 Site Architecture & Admin Visitor IP Surveillance
 
-The deployment is split into two specialized sites:
-
-### 1. 🌐 Public Portfolio (`index.html`)
-- **For All Public Viewers (Recruiters, Classmates, General Public)**
-- Displays your complete Manila folder scrapbook dossier: Profile, ID Badge, Tech Timeline, Case Studies, Certifications, and Leadership.
-- **Zero IP Address Exposure**: No IP radar, no visitor counters, no IP badges, and no admin controls are shown to the public viewer.
-- **Silent Background Telemetry**: In the background, `js/visitor-telemetry.js` logs real visitors and dispatches cross-device telemetry to the cloud for the admin without displaying anything to the visitor.
-- **Secret Admin Shortcut**: Site owner can press **`Ctrl + Shift + A`** anywhere on `index.html` to jump directly to `admin.html`.
-
-### 2. 🛡️ Site Owner Admin Portal (`admin.html`)
-- **Exclusively for Purva Thakare**
-- **URL**: `https://purvathakare.github.io/portfolio/admin.html`
-- **PIN-Protected Gate**: Access requires master PIN (Default: `purva2026`).
-- **Full IP Surveillance & Radar**:
-  - Live 360-degree rotating sweep radar with dynamic blips for active sessions.
-  - Complete Visitor IP Registry table: IP address (with 1-click `📋 Copy`), Location (City, State, Country), ISP/Network, Device/OS, and Timestamp.
-  - Live Metrics: Total Recorded Visits, Unique IP Count, Cloud Telemetry Status, Your Current IP.
-  - Search & Filter bar for instant IP lookup.
-  - **📥 1-Click CSV Export**: Download the complete visitor IP registry as `purva_thakare_visitor_ips.csv`.
-  - **🔔 Mobile Push Alerts**: Direct cloud link to [ntfy.sh/purva_portfolio_visitor_ips_2026](https://ntfy.sh/purva_portfolio_visitor_ips_2026) and free mobile app notifications.
-  - Custom Webhook integration (Discord / Telegram) & PIN customizer.
+- **Single Unified Site (`index.html`)**: Everything runs seamlessly in a single portfolio site.
+- **Zero Public IP Exposure**: Casual visitors, recruiters, and professors see NO IP addresses, NO radar scopes, and NO IP badges anywhere.
+- **Admin Visitor IP Vault (Contact Section Only)**:
+  - Located strictly at the bottom of the **Contact** section (`#stage-contact`).
+  - Protected behind an authorization PIN gate (Default PIN: `purva2026`).
+  - Regular visitors only see the locked clearance prompt: *"Restricted to Purva Thakare. Enter PIN code to inspect real-time visitor IP addresses and connection logs."*
+  - When unlocked by the admin, it displays:
+    - **Total Visits Recorded & Unique IP Count**
+    - **Real-Time Visitor IP Registry Table**: IP address (with 1-click `📋 Copy`), Location (City, State, Country), ISP/Network, Device/OS, and Timestamp.
+    - **Search & Filter**: Real-time keyword filter across IPs and locations.
+    - **📥 1-Click CSV Export**: Download all visitor logs as `purva_thakare_visitor_ips.csv`.
+    - **🔔 Mobile Push Alerts**: Direct cloud link to [ntfy.sh/purva_portfolio_visitor_ips_2026](https://ntfy.sh/purva_portfolio_visitor_ips_2026) and free mobile app notifications.
+    - **Custom Webhook Integration**: Supports Discord/Telegram webhook notifications.
+    - **Lock Console**: 1-click lock button to protect the console when done.
+- **Secret Shortcut**: Press **`Ctrl + Shift + A`** (or `Cmd + Shift + A` on Mac) anywhere on the portfolio to jump straight to the Contact section admin vault!
 
 ---
 
@@ -98,8 +92,7 @@ The deployment is split into two specialized sites:
 ```
 purva-thakare-portfolio/
 │
-├── index.html                   # Public scrapbook portfolio (Zero IP data shown to public)
-├── admin.html                   # Dedicated Site Owner Admin Surveillance & IP Center
+├── index.html                   # Master scrapbook portfolio & contact-embedded admin IP vault
 ├── README.md                    # Project documentation & deployment guide
 │
 ├── css/
@@ -107,9 +100,8 @@ purva-thakare-portfolio/
 │
 ├── js/
 │   ├── retro-sound.js           # Web Audio API sound synthesizer
-│   ├── visitor-telemetry.js     # Silent background visitor logging for index.html
-│   ├── admin-portal.js          # Admin surveillance, radar blips, & CSV export for admin.html
-│   └── interactive-console.js   # Public stage switcher & project inspection
+│   ├── visitor-telemetry.js     # Silent visitor logging & Contact section admin console
+│   └── interactive-console.js   # Public stage switcher & project modal inspection
 │
 └── assets/
     ├── images/

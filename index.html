@@ -614,6 +614,150 @@
             </form>
           </div>
         </div>
+
+        <!-- =============================================================
+             ADMIN ONLY // VISITOR IP SURVEILLANCE VAULT (CONTACT SECTION ONLY)
+             Visible only to site owner (Purva) after PIN authentication
+             ============================================================= -->
+        <div class="admin-contact-container" id="admin-contact-section" style="margin-top: 36px; border-top: 2px dashed #865593; padding-top: 24px;">
+          
+          <!-- State 1: Locked Clearance Prompt (Visible by Default to visitors) -->
+          <div id="contact-admin-locked" style="background: #fbf9f5; border: 1.5px solid #222222; border-radius: 8px; padding: 18px 22px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 14px;">
+              <div>
+                <div class="admin-classified-tag" style="margin-bottom: 6px;">SITE OWNER CLEARANCE</div>
+                <div style="font-weight: 800; font-size: 1.05rem; color: #222222;">
+                  🔒 Administrator IP Surveillance Portal
+                </div>
+                <div style="font-size: 0.8rem; color: #666666; margin-top: 3px;">
+                  Restricted to Purva Thakare. Enter PIN code to inspect real-time visitor IP addresses and connection logs.
+                </div>
+              </div>
+
+              <!-- Quick PIN Unlock Form -->
+              <form id="contact-admin-pin-form" style="display: flex; gap: 8px; align-items: center; flex-wrap: wrap;">
+                <input type="password" id="contact-admin-pin-input" class="admin-search-input" placeholder="Enter PIN code" style="width: 160px; min-width: 130px; padding: 8px 12px;" required>
+                <button type="submit" class="admin-action-btn" style="padding: 8px 18px; font-size: 0.82rem;">
+                  Unlock
+                </button>
+              </form>
+            </div>
+            <div id="contact-admin-pin-error" class="admin-pin-error" style="margin-top: 8px; color: #c0392b;">Incorrect PIN. Access restricted to site administrator.</div>
+          </div>
+
+          <!-- State 2: Unlocked Admin Console (Revealed ONLY after correct PIN verification) -->
+          <div id="contact-admin-unlocked" style="display: none; background: #ffffff; border: 2px solid #222222; border-radius: 8px; padding: 22px;">
+            
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 12px; margin-bottom: 18px;">
+              <div>
+                <div class="admin-classified-tag" style="margin-bottom: 4px;">TOP SECRET // VISITOR SURVEILLANCE REGISTRY</div>
+                <h3 style="font-size: 1.35rem; font-weight: 800; color: #222222; margin: 2px 0;">
+                  Live Visitor IP Intelligence Center
+                </h3>
+                <div style="font-size: 0.78rem; color: #666666;">
+                  Authenticated as: <strong style="color: #865593;">Purva Thakare (Admin)</strong> // Real-time cross-device visitor traffic
+                </div>
+              </div>
+
+              <button class="admin-action-btn" id="btn-contact-admin-lock" style="font-size: 0.75rem; background: #c0392b;">
+                🔒 Lock Console
+              </button>
+            </div>
+
+            <!-- Live Metrics Deck -->
+            <div class="admin-metrics-row">
+              <div class="admin-metric-card">
+                <div class="admin-metric-num" id="contact-metric-total">0</div>
+                <div class="admin-metric-label">TOTAL VISITS RECORDED</div>
+              </div>
+              <div class="admin-metric-card">
+                <div class="admin-metric-num" id="contact-metric-unique">0</div>
+                <div class="admin-metric-label">UNIQUE VISITOR IPS</div>
+              </div>
+              <div class="admin-metric-card">
+                <div class="admin-metric-num" style="color: #2e7d32;" id="contact-metric-sync">LIVE 🟢</div>
+                <div class="admin-metric-label">CLOUD TELEMETRY SYNC</div>
+              </div>
+            </div>
+
+            <!-- Toolbar: Search filter, Refresh, CSV Export, Clear -->
+            <div class="admin-toolbar-row" style="margin-bottom: 14px;">
+              <input type="text" id="contact-admin-search" class="admin-search-input" placeholder="🔍 Search IP, City, Country, or ISP...">
+              
+              <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+                <button class="admin-action-btn btn-secondary" id="btn-contact-admin-refresh" title="Pull latest incoming visitor logs from cloud">
+                  🔄 Refresh
+                </button>
+                <button class="admin-action-btn" id="btn-contact-admin-export" title="Download all visitor IPs as CSV spreadsheet">
+                  📥 Export CSV
+                </button>
+                <button class="admin-action-btn btn-secondary" id="btn-contact-admin-clear" title="Clear current visitor log history" style="color: #c0392b; border-color: #c0392b;">
+                  🗑️ Clear
+                </button>
+              </div>
+            </div>
+
+            <!-- Real-Time Visitor IP Registry Table -->
+            <div class="admin-table-wrapper" style="max-height: 400px; border: 1.5px solid #222222; border-radius: 6px;">
+              <table class="admin-ip-table" id="contact-admin-table">
+                <thead>
+                  <tr>
+                    <th style="min-width: 140px;">Visitor IP</th>
+                    <th style="min-width: 160px;">Geographic Location</th>
+                    <th style="min-width: 130px;">Network / ISP</th>
+                    <th style="min-width: 130px;">Device & OS</th>
+                    <th style="min-width: 130px;">Timestamp</th>
+                  </tr>
+                </thead>
+                <tbody id="contact-admin-tbody">
+                  <!-- Injected via js/visitor-telemetry.js -->
+                </tbody>
+              </table>
+            </div>
+
+            <!-- Real-Time Mobile Push Notifications & Cloud Webhook Settings -->
+            <div class="admin-cloud-card" style="margin-top: 20px;">
+              <div class="admin-cloud-header">
+                <span>📡</span> Real-Time Cloud Telemetry & Push Alerts
+              </div>
+              <p style="font-size: 0.8rem; color: #555555; line-height: 1.45; margin-bottom: 10px;">
+                Visitors are dispatched to your cloud feed in real time. You can view the live feed in any browser or receive an instant push notification on your mobile phone whenever someone opens your portfolio!
+              </p>
+
+              <div style="display: flex; gap: 12px; align-items: center; flex-wrap: wrap; margin-bottom: 14px;">
+                <a href="https://ntfy.sh/purva_portfolio_visitor_ips_2026" target="_blank" rel="noopener noreferrer" class="admin-action-btn" style="background: #865593; font-size: 0.78rem; padding: 7px 14px;">
+                  🔔 Open Live Cloud Stream (ntfy.sh)
+                </a>
+                <span style="font-size: 0.75rem; color: #666;">
+                  (Or subscribe on the free <a href="https://ntfy.sh" target="_blank" style="color: #865593; font-weight: bold;">ntfy app</a> to topic: <code>purva_portfolio_visitor_ips_2026</code>)
+                </span>
+              </div>
+
+              <div style="border-top: 1px dashed #dcd0de; padding-top: 10px; margin-top: 10px;">
+                <div style="font-size: 0.75rem; font-weight: 700; color: #444;">
+                  Custom Webhook (Discord / Telegram / Custom API):
+                </div>
+                <div class="admin-cloud-input-row">
+                  <input type="url" id="contact-custom-webhook" class="admin-cloud-input" placeholder="https://discord.com/api/webhooks/... or https://your-server/webhook">
+                  <button class="admin-action-btn" id="btn-contact-save-webhook" style="font-size: 0.75rem; padding: 6px 12px;">Save Webhook</button>
+                </div>
+                <div id="contact-webhook-status" style="font-size: 0.72rem; color: #2e7d32; margin-top: 4px; display: none;">Saved! Future visitors will trigger this webhook.</div>
+              </div>
+
+              <div style="border-top: 1px dashed #dcd0de; padding-top: 10px; margin-top: 10px;">
+                <div style="font-size: 0.75rem; font-weight: 700; color: #444;">
+                  Change Admin PIN:
+                </div>
+                <div class="admin-cloud-input-row">
+                  <input type="text" id="contact-change-pin" class="admin-cloud-input" placeholder="New PIN (e.g. purva2026)">
+                  <button class="admin-action-btn" id="btn-contact-save-pin" style="font-size: 0.75rem; padding: 6px 12px;">Update PIN</button>
+                </div>
+                <div id="contact-pin-status" style="font-size: 0.72rem; color: #2e7d32; margin-top: 4px; display: none;">Admin PIN updated successfully!</div>
+              </div>
+            </div>
+
+          </div>
+        </div>
       </div>
 
       <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 24px; flex-wrap: wrap; gap: 10px;">
