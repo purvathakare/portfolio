@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Purva Thakare - Manila Folder & Scrapbook Portfolio (SIT Nagpur). Inspired by Alba Maho scrapbook reference.">
+  <meta name="author" content="Purva Thakare">
+  <title>Purva Thakare | Portfolio Dossier</title>
+  
+  <!-- Favicon Manila Folder Pin -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📁</text></svg>">
+
+  <!-- Manila Folder & Scrapbook Stylesheet -->
+  <link rel="stylesheet" href="css/retro-arcade.css">
+</head>
+<body>
+
+  <!-- Top Quick IP Radar & Telemetry Pill -->
+  <aside class="quick-hud-dock">
+    <a href="#radar" class="ip-radar-pill" id="hud-visitor-ip" title="Click to view full Network Radar">
+      <span class="pulse-dot"></span>
+      <span>IP: DETECTING...</span>
+    </a>
+    <div style="font-size: 0.75rem; font-weight: 700; color: #8a7d91;">
+      SYMBIOSIS INSTITUTE OF TECHNOLOGY // NAGPUR
+    </div>
+  </aside>
+
+  <!-- ===================================================================
+       1. TOP PILL NAVIGATION (Active on sub-pages; index page navigates via notebook)
+       =================================================================== -->
+  <nav class="top-pill-nav" aria-label="Scrapbook Section Navigation">
+    <div class="pill-nav-container">
+      <button class="nav-pill-btn active" data-stage="cover">📁 INDEX</button>
+      <button class="nav-pill-btn" data-stage="about">ABOUT ME</button>
+      <button class="nav-pill-btn" data-stage="skills">SKILLS</button>
+      <button class="nav-pill-btn" data-stage="projects">PROJECTS</button>
+      <button class="nav-pill-btn" data-stage="inventory">CERTIFICATES</button>
+      <button class="nav-pill-btn" data-stage="guilds">GUILDS</button>
+      <button class="nav-pill-btn" data-stage="radar">IP RADAR</button>
+      <button class="nav-pill-btn" data-stage="contact">CONTACT</button>
+    </div>
+  </nav>
+
+  <!-- ===================================================================
+       MAIN VIEWPORT: STAGES IN MANILA FOLDER & SCRAPBOOK AESTHETIC
+       =================================================================== -->
+  <main class="scrapbook-viewport">
+
+    <!-- ===============================================================
+         STAGE 1: HERO MANILA FOLDER COVER (Matches Top of Reference)
+         =============================================================== -->
+    <section class="scrapbook-stage active-stage" id="stage-cover">
+      <div class="manila-folder-wrapper">
+        <div class="manila-folder-card">
+          <!-- Folder Crease Seam -->
+          <div class="folder-center-crease"></div>
+
+          <!-- Pinned Lined Notebook Paper (Interactive Table of Contents Index Page) -->
+          <div class="pinned-notebook-sheet">
+            <!-- Purple 3D Pushpin (Top-Left) -->
+            <svg class="purple-pushpin" viewBox="0 0 40 40">
+              <circle cx="20" cy="14" r="10" fill="#9d72a8" stroke="#774982" stroke-width="2"/>
+              <ellipse cx="20" cy="12" rx="6" ry="3" fill="#c8a5d3"/>
+              <polygon points="17,22 23,22 20,38" fill="#4a284e"/>
+            </svg>
+
+            <!-- Purple Wax Seal Stamp with Bow (Right Edge) -->
+            <div class="wax-seal-badge" title="Verified Dossier">🎀</div>
+
+            <!-- Yellow 3D Star Charm (Bottom-Left from index_paper_reference.png) -->
+            <div class="yellow-star-charm" title="Star Accent">⭐</div>
+
+            <!-- Lavender Gingham Washi Tape (Bottom Edge) -->
+            <div class="gingham-tape-strip"></div>
+
+            <!-- Index Sheet Content / Buttons Placed on the Notebook Ruling -->
+            <div class="index-sheet-header">
+              <span class="index-header-title">DOSSIER INDEX // 2026</span>
+              <span class="index-header-sub">SELECT SECTION ➔</span>
+            </div>
+
+            <div class="index-nav-links">
+              <button class="index-line-btn" data-target-stage="about">
+                <div class="index-line-left">
+                  <span class="idx-marker">01</span>
+                  <span class="idx-text">ABOUT ME</span>
+                  <span class="idx-sub">Student ID & Profile</span>
+                </div>
+                <span class="idx-arrow">➔</span>
+              </button>
+
+              <button class="index-line-btn" data-target-stage="skills">
+                <div class="index-line-left">
+                  <span class="idx-marker">02</span>
+                  <span class="idx-text">SKILLS & ARSENAL</span>
+                  <span class="idx-sub">Tech Timeline</span>
+                </div>
+                <span class="idx-arrow">➔</span>
+              </button>
+
+              <button class="index-line-btn" data-target-stage="projects">
+                <div class="index-line-left">
+                  <span class="idx-marker">03</span>
+                  <span class="idx-text">ENGINEERING PROJECTS</span>
+                  <span class="idx-sub">Case Studies</span>
+                </div>
+                <span class="idx-arrow">➔</span>
+              </button>
+
+              <button class="index-line-btn" data-target-stage="inventory">
+                <div class="index-line-left">
+                  <span class="idx-marker">04</span>
+                  <span class="idx-text">CERTIFICATES & MARKS</span>
+                  <span class="idx-sub">Credentials</span>
+                </div>
+                <span class="idx-arrow">➔</span>
+              </button>
+
+              <button class="index-line-btn" data-target-stage="guilds">
+                <div class="index-line-left">
+                  <span class="idx-marker">05</span>
+                  <span class="idx-text">GUILDS & HACKATHONS</span>
+                  <span class="idx-sub">ACM & Leadership</span>
+                </div>
+                <span class="idx-arrow">➔</span>
+              </button>
+
+              <button class="index-line-btn" data-target-stage="radar">
+                <div class="index-line-left">
+                  <span class="idx-marker">06</span>
+                  <span class="idx-text">LIVE VISITOR IP RADAR</span>
+                  <span class="idx-sub">Telemetry Ledger</span>
+                </div>
+                <span class="idx-arrow">➔</span>
+              </button>
+
+              <button class="index-line-btn" data-target-stage="contact">
+                <div class="index-line-left">
+                  <span class="idx-marker">07</span>
+                  <span class="idx-text">CONTACT & RESUME</span>
+                  <span class="idx-sub">Comms & CV</span>
+                </div>
+                <span class="idx-arrow">➔</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Signature Mixed Typography: "Port" (Geo) + "folio" (Cursive Script) -->
+          <div class="mixed-portfolio-title">
+            <span class="title-part-geo">Port</span>
+            <span class="title-part-script">folio</span>
+          </div>
+
+          <!-- Bottom Label Badge (Alba Maho style -> Purva Thakare) -->
+          <div class="folder-name-badge">
+            Purva Thakare
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===============================================================
+         STAGE 2: ABOUT ME (DOSSIER & HANGING STUDENT ID LANYARD BADGE)
+         Matches Middle Section of Reference Image
+         =============================================================== -->
+    <section class="scrapbook-stage" id="stage-about">
+      <div class="stationery-dossier-card">
+        <!-- Top Folder Tab -->
+        <div class="dossier-top-tab"></div>
+
+        <!-- Mixed Title: "About" (Cursive Script) + "me" (Pixel/Geo) -->
+        <div class="about-mixed-heading">
+          <span class="script-about">About</span>
+          <span class="geo-me">me</span>
+        </div>
+
+        <!-- 3-Column Dossier Layout: Left Notes, Center Hanging ID, Right Notes -->
+        <div class="dossier-columns-grid">
+
+          <!-- Left Column Notes -->
+          <div style="display: flex; flex-direction: column; gap: 16px;">
+            <div class="dotted-note-box">
+              <div class="note-box-title">🎓 Current Academic Standing</div>
+              <div>Currently studying Bachelor of Technology in Computer Science and Engineering at Symbiosis Institute of Technology (SIT), Nagpur (2024–2028).</div>
+            </div>
+
+            <div class="dotted-note-box">
+              <div class="note-box-title">🎖️ Schooling Foundation</div>
+              <div>Carmel Convent Sr. Sec. School, Bhopal, Madhya Pradesh (Kindergarten through 12th Grade, CBSE Board).</div>
+            </div>
+          </div>
+
+          <!-- Center Column: Hanging Student ID Badge (Replicating Reference Image) -->
+          <div class="student-id-lanyard-wrapper">
+            <!-- Metal Lanyard Clamp & Strap Loop -->
+            <div class="id-metal-clip">
+              <div class="clip-hole"></div>
+            </div>
+
+            <!-- Clear Plastic Badge Holder -->
+            <div class="hanging-id-card">
+              <div class="id-card-topbar">
+                <span>STUDENT ID // 2024–28</span>
+                <span>SIT NAGPUR</span>
+              </div>
+
+              <div class="id-card-content-flex">
+                <!-- User's Official SIT Uniform Portrait with Round Glasses -->
+                <div class="id-photo-frame">
+                  <img src="assets/images/purva_profile.jpg" alt="Purva Thakare SIT Portrait" class="id-photo-img">
+                </div>
+
+                <!-- Meta Fields -->
+                <div class="id-meta-fields">
+                  <div style="font-weight: 800; font-size: 0.65rem; color: #888;">NAME:</div>
+                  <div class="id-name-script">Purva Thakare</div>
+                  <div style="font-weight: 700; color: #222; font-size: 0.72rem; margin-top: 2px;">OCCUPATION:</div>
+                  <div style="font-style: italic; color: #555;">CSE Undergrad</div>
+                  <div style="font-weight: 700; color: #222; font-size: 0.72rem; margin-top: 2px;">STATUS:</div>
+                  <div style="color: #27ae60; font-weight: 700;">Active Scholar</div>
+                </div>
+              </div>
+
+              <!-- Barcode Strip on ID Badge -->
+              <div class="id-barcode-graphic"></div>
+            </div>
+          </div>
+
+          <!-- Right Column Notes -->
+          <div style="display: flex; flex-direction: column; gap: 16px;">
+            <div class="dotted-note-box">
+              <div class="note-box-title">🗣️ Languages</div>
+              <div>English, Hindi, Marathi</div>
+            </div>
+
+            <div class="dotted-note-box">
+              <div class="note-box-title">📍 Locations</div>
+              <div>Bhopal, Madhya Pradesh<br>Nagpur, Maharashtra</div>
+            </div>
+
+            <div class="dotted-note-box">
+              <div class="note-box-title">⚡ Career Focus</div>
+              <div>AI/ML Systems, Web Engineering, and IoT Wearables.</div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Bottom Statement (Matches Reference Quote Style) -->
+        <div class="dossier-bottom-summary">
+          Interested in <strong>applied machine learning, responsive web platforms, and IoT hazard detection systems</strong> that connect with users through purposeful software engineering.
+        </div>
+      </div>
+
+      <div style="display: flex; justify-content: space-between; margin-top: 24px;">
+        <button class="nav-pill-btn" data-target-stage="cover">◀ Cover</button>
+        <button class="nav-pill-btn" data-target-stage="skills">Skills Sheet ▶</button>
+      </div>
+    </section>
+
+    <!-- ===============================================================
+         STAGE 3: SKILLS SHEET WITH CURLED CORNERS & TIMELINE BRANCHES
+         Matches Bottom Section of Reference Image
+         =============================================================== -->
+    <section class="scrapbook-stage" id="stage-skills">
+      <div class="skills-sheet-container">
+        <!-- Top Pixel Confetti / Purple Mosaic Row -->
+        <div class="top-pixel-confetti-row"></div>
+
+        <!-- Curled Paper Corners (Dog-ear folded corners from reference) -->
+        <div class="curled-corner-left"></div>
+        <div class="curled-corner-right"></div>
+
+        <!-- Mixed Title: "Sk" (Cursive Script) + "ills" (Pixel/Geo) -->
+        <div class="skills-mixed-title">
+          <span class="script-sk">Sk</span>
+          <span class="geo-ills">ills</span>
+        </div>
+
+        <!-- Skills Timeline Wire with Purple Node Badges -->
+        <div class="skills-timeline-wire">
+          <div class="skill-branch-nodes">
+            
+            <!-- Skill 1: Python -->
+            <div class="skill-badge-card">
+              <div class="skill-badge-header">
+                <div class="skill-square-icon">Py</div>
+                <div>
+                  <div style="font-weight: 800; font-size: 0.95rem;">Python</div>
+                  <div class="skill-stars-rating">★★★★★</div>
+                </div>
+              </div>
+              <p class="skill-desc-text">
+                Certified in Python 3.x (Red Hat AD141). Data pipelines, OOP design, algorithmic scripting, and API services.
+              </p>
+            </div>
+
+            <!-- Skill 2: JavaScript & Web -->
+            <div class="skill-badge-card">
+              <div class="skill-badge-header">
+                <div class="skill-square-icon">Js</div>
+                <div>
+                  <div style="font-weight: 800; font-size: 0.95rem;">Web Dev</div>
+                  <div class="skill-stars-rating">★★★★★</div>
+                </div>
+              </div>
+              <p class="skill-desc-text">
+                Modern responsive architectures, HTML5, CSS3, DOM manipulation, RESTful API integration, and user-centric UI.
+              </p>
+            </div>
+
+            <!-- Skill 3: C & Java -->
+            <div class="skill-badge-card">
+              <div class="skill-badge-header">
+                <div class="skill-square-icon">C/J</div>
+                <div>
+                  <div style="font-weight: 800; font-size: 0.95rem;">C / Java</div>
+                  <div class="skill-stars-rating">★★★★☆</div>
+                </div>
+              </div>
+              <p class="skill-desc-text">
+                Robust foundation in memory management, object-oriented concepts, and algorithmic problem-solving.
+              </p>
+            </div>
+
+            <!-- Skill 4: Machine Learning & NLP -->
+            <div class="skill-badge-card">
+              <div class="skill-badge-header">
+                <div class="skill-square-icon">ML</div>
+                <div>
+                  <div style="font-weight: 800; font-size: 0.95rem;">AI / ML</div>
+                  <div class="skill-stars-rating">★★★★☆</div>
+                </div>
+              </div>
+              <p class="skill-desc-text">
+                Scikit-learn, text sentiment classification, cosine similarity recommender systems, and computer vision pipelines.
+              </p>
+            </div>
+
+            <!-- Skill 5: IoT & Embedded Sensors -->
+            <div class="skill-badge-card">
+              <div class="skill-badge-header">
+                <div class="skill-square-icon">IoT</div>
+                <div>
+                  <div style="font-weight: 800; font-size: 0.95rem;">Hardware</div>
+                  <div class="skill-stars-rating">★★★★☆</div>
+                </div>
+              </div>
+              <p class="skill-desc-text">
+                Microcontroller firmware (Arduino/ESP32), ultrasonic/optical sensor arrays, and low-latency alert haptics.
+              </p>
+            </div>
+
+          </div>
+
+          <!-- Plus Tags Cluster (+ SQL, + GIT, + LINUX, + EXCEL, + CANVA) -->
+          <div class="skill-plus-tags-cluster">
+            <span class="plus-tag-pill"><span class="plus-symbol">+</span> SQL / PL</span>
+            <span class="plus-tag-pill"><span class="plus-symbol">+</span> GIT & GITHUB</span>
+            <span class="plus-tag-pill"><span class="plus-symbol">+</span> LINUX (RED HAT RH124)</span>
+            <span class="plus-tag-pill"><span class="plus-symbol">+</span> DATA STRUCTURES (INFOSYS)</span>
+            <span class="plus-tag-pill"><span class="plus-symbol">+</span> CANVA</span>
+            <span class="plus-tag-pill"><span class="plus-symbol">+</span> EXCEL</span>
+            <span class="plus-tag-pill"><span class="plus-symbol">+</span> POWERPOINT</span>
+            <span class="plus-tag-pill"><span class="plus-symbol">+</span> TEAM LEADERSHIP (ACM)</span>
+          </div>
+        </div>
+      </div>
+
+      <div style="display: flex; justify-content: space-between; margin-top: 24px;">
+        <button class="nav-pill-btn" data-target-stage="about">◀ About Me</button>
+        <button class="nav-pill-btn" data-target-stage="projects">View Projects ▶</button>
+      </div>
+    </section>
+
+    <!-- ===============================================================
+         STAGE 4: PROJECTS (SCRAPBOOK DOSSIER CARDS)
+         =============================================================== -->
+    <section class="scrapbook-stage" id="stage-projects">
+      <div class="stationery-dossier-card">
+        <div class="about-mixed-heading">
+          <span class="script-about">Proj</span>
+          <span class="geo-me">ects</span>
+        </div>
+
+        <div class="projects-scrapbook-grid">
+          
+          <!-- Project 1 -->
+          <article class="project-dossier-card">
+            <div class="project-tape-tag">RECOMMENDER SYSTEM</div>
+            <h3 class="project-card-heading">Spotify Recommender System</h3>
+            <div class="project-dates">Jan 2025 – Apr 2025</div>
+            <p class="project-body">
+              Engineered a personalized music recommendation engine using Python, Scikit-learn, and the Spotify Web API. Calculates cosine similarity across 50,000+ track metadata vectors to generate custom 20-song playlists.
+            </p>
+            <button class="project-inspect-btn btn-inspect-quest" data-quest="spotify">Inspect Case Study</button>
+          </article>
+
+          <!-- Project 2 -->
+          <article class="project-dossier-card">
+            <div class="project-tape-tag">CONVERSATIONAL AI</div>
+            <h3 class="project-card-heading">NLP Mental Health Chatbot</h3>
+            <div class="project-dates">Jul 2025 – Dec 2025</div>
+            <p class="project-body">
+              Developed an empathetic AI conversational agent using Python and NLP to analyze conversational sentiment, detect emotional distress signals, and offer supportive context-aware wellness coping strategies.
+            </p>
+            <button class="project-inspect-btn btn-inspect-quest" data-quest="chatbot">Inspect Case Study</button>
+          </article>
+
+          <!-- Project 3 -->
+          <article class="project-dossier-card">
+            <div class="project-tape-tag">COMPUTER VISION & NLP</div>
+            <h3 class="project-card-heading">Cinematic Metadata AI Agent</h3>
+            <div class="project-dates">Jan 2026 – Present</div>
+            <p class="project-body">
+              Built an automated AI agent that processes video reels to extract scene classification, actor dialogues, emotion detection, and timestamp-synchronized video discovery indices.
+            </p>
+            <button class="project-inspect-btn btn-inspect-quest" data-quest="cinematic">Inspect Case Study</button>
+          </article>
+
+          <!-- Project 4 -->
+          <article class="project-dossier-card">
+            <div class="project-tape-tag">IOT & WEARABLE TECH</div>
+            <h3 class="project-card-heading">AuraPath: Hazard Detection</h3>
+            <div class="project-dates">Apr 2026 – Present</div>
+            <p class="project-body">
+              Designed AuraPath, an assistive wearable device for visually impaired individuals. Integrates ultrasonic proximity and optical sensors with microcontrollers for real-time haptic/audio hazard alerts.
+            </p>
+            <button class="project-inspect-btn btn-inspect-quest" data-quest="aurapath">Inspect Case Study</button>
+          </article>
+
+        </div>
+      </div>
+
+      <div style="display: flex; justify-content: space-between; margin-top: 24px;">
+        <button class="nav-pill-btn" data-target-stage="skills">◀ Skills</button>
+        <button class="nav-pill-btn" data-target-stage="inventory">Certificates ▶</button>
+      </div>
+    </section>
+
+    <!-- ===============================================================
+         STAGE 5: INVENTORY & CERTIFICATES
+         =============================================================== -->
+    <section class="scrapbook-stage" id="stage-inventory">
+      <div class="stationery-dossier-card">
+        <div class="about-mixed-heading">
+          <span class="script-about">Cert</span>
+          <span class="geo-me">ificates</span>
+        </div>
+
+        <div class="cert-cards-row">
+          <div class="cert-document-item">
+            <span class="cert-badge-stamp">📜</span>
+            <div class="cert-doc-title">Introduction to Python (AD141)</div>
+            <div class="cert-doc-issuer">Red Hat Training & Certification</div>
+            <p style="font-size: 0.85rem; color: #555;">
+              Certified mastery in modular Python, procedural algorithms, data transformation, and system utilities.
+            </p>
+          </div>
+
+          <div class="cert-document-item">
+            <span class="cert-badge-stamp">🏆</span>
+            <div class="cert-doc-title">DSA using Python (Part 1)</div>
+            <div class="cert-doc-issuer">Infosys Springboard</div>
+            <p style="font-size: 0.85rem; color: #555;">
+              Computational complexity analysis (Big-O), recursion, sorting/searching algorithms, and linked structures.
+            </p>
+          </div>
+
+          <div class="cert-document-item">
+            <span class="cert-badge-stamp">🛡️</span>
+            <div class="cert-doc-title">System Administration I (RH124)</div>
+            <div class="cert-doc-issuer">Red Hat Enterprise Linux (Ver. 10)</div>
+            <p style="font-size: 0.85rem; color: #555;">
+              Linux terminal mastery, file hierarchy permissions, storage management, and background service daemons.
+            </p>
+          </div>
+        </div>
+
+        <!-- Academic Performance Scoreboard -->
+        <div class="academic-scoreboard-row">
+          <div class="score-cell">
+            <div class="score-num">B.Tech</div>
+            <div style="font-weight: 700; font-size: 0.85rem;">SIT NAGPUR</div>
+            <div style="font-size: 0.75rem; color: #666;">Computer Science (2024–28)</div>
+          </div>
+          <div class="score-cell">
+            <div class="score-num">10+2</div>
+            <div style="font-weight: 700; font-size: 0.85rem;">CARMEL CONVENT</div>
+            <div style="font-size: 0.75rem; color: #666;">CBSE Board, Bhopal</div>
+          </div>
+          <div class="score-cell">
+            <div class="score-num">4+</div>
+            <div style="font-weight: 700; font-size: 0.85rem;">PROJECTS</div>
+            <div style="font-size: 0.75rem; color: #666;">AI, NLP, IoT, Recommender</div>
+          </div>
+          <div class="score-cell">
+            <div class="score-num">3</div>
+            <div style="font-weight: 700; font-size: 0.85rem;">CREDENTIALS</div>
+            <div style="font-size: 0.75rem; color: #666;">Red Hat & Infosys</div>
+          </div>
+        </div>
+      </div>
+
+      <div style="display: flex; justify-content: space-between; margin-top: 24px;">
+        <button class="nav-pill-btn" data-target-stage="projects">◀ Projects</button>
+        <button class="nav-pill-btn" data-target-stage="guilds">Guilds ▶</button>
+      </div>
+    </section>
+
+    <!-- ===============================================================
+         STAGE 6: GUILDS & CONTRIBUTIONS
+         =============================================================== -->
+    <section class="scrapbook-stage" id="stage-guilds">
+      <div class="stationery-dossier-card">
+        <div class="about-mixed-heading">
+          <span class="script-about">Lead</span>
+          <span class="geo-me">ership</span>
+        </div>
+
+        <div class="projects-scrapbook-grid">
+          <div class="project-dossier-card">
+            <div class="project-tape-tag">ACM STUDENT CHAPTER</div>
+            <h3 class="project-card-heading">Core Committee Member</h3>
+            <div class="project-dates">SIT Nagpur Student Chapter</div>
+            <p class="project-body">
+              Active student leader organizing campus hackathons, technical speaker series, and collaborative programming bootcamps.
+            </p>
+          </div>
+
+          <div class="project-dossier-card">
+            <div class="project-tape-tag">ENTERPRISE INTERNSHIP</div>
+            <h3 class="project-card-heading">ServiceNow Virtual Internship</h3>
+            <div class="project-dates">Software Intern</div>
+            <p class="project-body">
+              Hands-on exposure to enterprise cloud workflows, automated service architectures, and system administration modules.
+            </p>
+          </div>
+
+          <div class="project-dossier-card">
+            <div class="project-tape-tag">NATIONAL INNOVATION</div>
+            <h3 class="project-card-heading">Smart India Hackathon (SIH)</h3>
+            <div class="project-dates">Competitor & System Designer</div>
+            <p class="project-body">
+              Collaborated in 36-hour nationwide hackathon tackling real-world problems with rapid prototype design and data implementation.
+            </p>
+          </div>
+
+          <div class="project-dossier-card">
+            <div class="project-tape-tag">TECH SYMPOSIUMS</div>
+            <h3 class="project-card-heading">Inter-College Hackathons</h3>
+            <div class="project-dates">Participant & Team Lead</div>
+            <p class="project-body">
+              Regular participant in sprint hackathons, developing functional AI tools, accessible hardware systems, and clean web applications.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div style="display: flex; justify-content: space-between; margin-top: 24px;">
+        <button class="nav-pill-btn" data-target-stage="inventory">◀ Certificates</button>
+        <button class="nav-pill-btn" data-target-stage="radar">IP Radar ▶</button>
+      </div>
+    </section>
+
+    <!-- ===============================================================
+         STAGE 7: VISITOR TELEMETRY RADAR (LIVE IP RADARS OF VISITORS)
+         =============================================================== -->
+    <section class="scrapbook-stage" id="stage-radar">
+      <div class="radar-dossier-panel">
+        <div class="radar-header-line">
+          <span>📡 LIVE VISITOR TELEMETRY & NETWORK RADAR</span>
+          <span style="color: #27ae60; font-size: 0.95rem; font-weight: 700;">● ACTIVE MONITORING NETWORK</span>
+        </div>
+
+        <!-- Radar Scope & Scanner Deck -->
+        <div class="radar-scanner-deck">
+          <!-- Circular Radar Screen -->
+          <div class="radar-scope-circle" id="radar-scope-container" title="Global Visitor Detection Radar">
+            <div class="radar-ring radar-ring-1"></div>
+            <div class="radar-ring radar-ring-2"></div>
+            <div class="radar-ring radar-ring-3"></div>
+            <div class="radar-crosshair-h"></div>
+            <div class="radar-crosshair-v"></div>
+            <div class="radar-sweep-beam"></div>
+            <!-- Dynamic blips injected via ip-tracker.js -->
+          </div>
+
+          <!-- Radar Legend & Status -->
+          <div class="radar-legend-box">
+            <div style="font-weight: 800; font-size: 0.95rem; color: #ffe66d; margin-bottom: 4px;">
+              RADAR FREQUENCY LOG
+            </div>
+            <div class="legend-item">
+              <span class="legend-blip-dot" style="background: #39ff14; box-shadow: 0 0 6px #39ff14;"></span>
+              <span><strong>Green Blip:</strong> Active Live Connection (You)</span>
+            </div>
+            <div class="legend-item">
+              <span class="legend-blip-dot" style="background: #00f0ff; box-shadow: 0 0 6px #00f0ff;"></span>
+              <span><strong>Cyan Blip:</strong> Historical Visitor Sessions</span>
+            </div>
+            <div style="margin-top: 6px;">
+              <button class="nav-pill-btn" id="btn-ping-radar" style="font-size: 0.72rem; padding: 6px 14px; background: #39ff14; color: #000; border-color: #39ff14;">
+                📡 PING RADAR / RE-SCAN
+              </button>
+              <div id="radar-ping-feedback" style="font-size: 0.75rem; color: #39ff14; margin-top: 4px; font-weight: 600;"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Current Visitor Live Telemetry Summary -->
+        <div style="margin-bottom: 12px; font-weight: 700; color: #c8b6ff; font-size: 0.95rem;">
+          [+] CURRENT VISITOR CONNECTION PROFILE (YOUR REAL-TIME TELEMETRY):
+        </div>
+
+        <div class="radar-data-grid">
+          <div class="radar-datum-box">
+            <div class="datum-label">YOUR PUBLIC IP ADDRESS:</div>
+            <div class="datum-val" id="terminal-visitor-ip">Detecting...</div>
+          </div>
+
+          <div class="radar-datum-box">
+            <div class="datum-label">GEOGRAPHIC LOCATION:</div>
+            <div class="datum-val" id="terminal-visitor-location" style="font-size: 1.1rem;">Detecting...</div>
+          </div>
+
+          <div class="radar-datum-box">
+            <div class="datum-label">ISP / NETWORK PROVIDER:</div>
+            <div class="datum-val" id="terminal-visitor-isp" style="font-size: 1.1rem; color: #82e0aa;">Detecting...</div>
+          </div>
+
+          <div class="radar-datum-box">
+            <div class="datum-label">OPERATING SYSTEM & BROWSER:</div>
+            <div class="datum-val" id="terminal-visitor-os" style="font-size: 1.1rem;">Detecting...</div>
+          </div>
+
+          <div class="radar-datum-box">
+            <div class="datum-label">DISPLAY RESOLUTION:</div>
+            <div class="datum-val" id="terminal-visitor-res">Detecting...</div>
+          </div>
+
+          <div class="radar-datum-box">
+            <div class="datum-label">LOCAL TIMEZONE:</div>
+            <div class="datum-val" id="terminal-visitor-tz" style="font-size: 1.1rem;">Detecting...</div>
+          </div>
+
+          <div class="radar-datum-box">
+            <div class="datum-label">SESSION TIME ELAPSED:</div>
+            <div class="datum-val" id="visitor-session-timer" style="color: #ff9ff3;">00:00</div>
+          </div>
+
+          <div class="radar-datum-box">
+            <div class="datum-label">TOTAL VISITOR INDEX:</div>
+            <div class="datum-val" id="terminal-visitor-count">#00142</div>
+          </div>
+        </div>
+
+        <!-- Recent Visitors Radar Log (People Visiting the Site) -->
+        <div class="visitor-log-section">
+          <div class="visitor-log-title-row">
+            <div style="font-weight: 800; font-size: 0.95rem; color: #ffe66d;">
+              📡 VISITOR TELEMETRY LEDGER (PEOPLE VISITING THIS SITE)
+            </div>
+            <div style="font-size: 0.75rem; color: #a097a8;">
+              Real-time Public IP & Connection Log
+            </div>
+          </div>
+
+          <table class="visitor-history-ledger" id="visitor-radar-log-table">
+            <thead>
+              <tr>
+                <th>VISITOR IP</th>
+                <th>GEOGRAPHIC LOCATION</th>
+                <th>NETWORK / ISP</th>
+                <th>CLIENT DEVICE & OS</th>
+                <th>TIMESTAMP</th>
+              </tr>
+            </thead>
+            <tbody id="visitor-radar-log-tbody">
+              <!-- Dynamically populated with real-time visitor data via ip-tracker.js -->
+            </tbody>
+          </table>
+        </div>
+
+      </div>
+
+      <div style="display: flex; justify-content: space-between; margin-top: 24px;">
+        <button class="nav-pill-btn" data-target-stage="guilds">◀ Guilds</button>
+        <button class="nav-pill-btn" data-target-stage="contact">Contact Purva ▶</button>
+      </div>
+    </section>
+
+    <!-- ===============================================================
+         STAGE 8: CONTACT & DOWNLOAD RESUME
+         =============================================================== -->
+    <section class="scrapbook-stage" id="stage-contact">
+      <div class="stationery-dossier-card">
+        <div class="about-mixed-heading">
+          <span class="script-about">Con</span>
+          <span class="geo-me">tact</span>
+        </div>
+
+        <div class="contact-dossier-grid">
+          <!-- Direct Links -->
+          <div>
+            <div class="contact-row-item">
+              <span>✉️</span>
+              <div>
+                <div style="font-size: 0.72rem; color: #888;">EMAIL:</div>
+                <a href="mailto:pthakare2602@gmail.com">pthakare2602@gmail.com</a>
+              </div>
+            </div>
+
+            <div class="contact-row-item">
+              <span>📞</span>
+              <div>
+                <div style="font-size: 0.72rem; color: #888;">TELEPHONE:</div>
+                <a href="tel:+917999282181">+91 7999282181</a>
+              </div>
+            </div>
+
+            <div class="contact-row-item">
+              <span>💼</span>
+              <div>
+                <div style="font-size: 0.72rem; color: #888;">LINKEDIN:</div>
+                <a href="https://www.linkedin.com/in/purva-thakare-83b820320/" target="_blank" rel="noopener noreferrer">Purva Thakare | LinkedIn</a>
+              </div>
+            </div>
+
+            <div class="contact-row-item">
+              <span>🐙</span>
+              <div>
+                <div style="font-size: 0.72rem; color: #888;">GITHUB:</div>
+                <a href="https://github.com/purvathakare" target="_blank" rel="noopener noreferrer">github.com/purvathakare</a>
+              </div>
+            </div>
+
+            <!-- Download Resume CTA Button -->
+            <div style="margin-top: 20px;">
+              <a href="assets/docs/Purva_Thakare_Resume.html" target="_blank" class="nav-pill-btn" style="display: block; text-align: center; background: #222222; color: #ffffff; padding: 12px 20px;">
+                📄 View & Print Official Resume / CV
+              </a>
+            </div>
+          </div>
+
+          <!-- Transmission Form -->
+          <div>
+            <h3 style="font-size: 1.1rem; margin-bottom: 12px; font-weight: 800;">Dispatch a Message</h3>
+            <form class="dossier-form" id="portfolio-contact-form">
+              <input type="text" id="form-name" placeholder="Your Name or Recruiter Title" required>
+              <input type="email" id="form-email" placeholder="Your Work Email" required>
+              <textarea id="form-msg" rows="4" placeholder="Let's build something extraordinary together..." required></textarea>
+              <button type="submit" class="btn-submit-scrapbook">Send Message</button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <div style="display: flex; justify-content: space-between; margin-top: 24px;">
+        <button class="nav-pill-btn" data-target-stage="radar">◀ IP Radar</button>
+        <button class="nav-pill-btn" data-target-stage="cover">Cover Home ▶</button>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Interactive Project Inspection Modal -->
+  <div class="modal-overlay" id="quest-detail-modal">
+    <div class="modal-content">
+      <button class="modal-close-btn" id="modal-close">✕</button>
+      <h3 id="modal-quest-title" style="color: #222222; font-size: 1.25rem; font-weight: 800; margin-bottom: 12px;"></h3>
+      <div id="modal-quest-body"></div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/retro-sound.js"></script>
+  <script src="js/ip-tracker.js"></script>
+  <script src="js/interactive-console.js"></script>
+</body>
+</html>

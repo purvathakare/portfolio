@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Purva Thakare - Curriculum Vitae</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.5;
+      color: #222;
+      background: #f4f6f9;
+      padding: 30px;
+      margin: 0;
+    }
+    .resume-container {
+      max-width: 850px;
+      margin: 0 auto;
+      background: #fff;
+      padding: 40px 50px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      border-radius: 6px;
+    }
+    .header-bar {
+      border-bottom: 2px solid #2b2d42;
+      padding-bottom: 15px;
+      margin-bottom: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+    }
+    .name-title h1 {
+      margin: 0;
+      font-size: 28px;
+      color: #1a1a2e;
+      letter-spacing: 0.5px;
+    }
+    .name-title p {
+      margin: 5px 0 0;
+      color: #0077b6;
+      font-size: 15px;
+      font-weight: 600;
+    }
+    .contact-info {
+      text-align: right;
+      font-size: 13px;
+      color: #555;
+      line-height: 1.6;
+    }
+    .contact-info a {
+      color: #0077b6;
+      text-decoration: none;
+    }
+    .section-title {
+      font-size: 15px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #1a1a2e;
+      border-bottom: 1.5px solid #0077b6;
+      padding-bottom: 4px;
+      margin-top: 22px;
+      margin-bottom: 12px;
+    }
+    .entry-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 2px;
+    }
+    .entry-main {
+      font-weight: 700;
+      color: #222;
+      font-size: 14.5px;
+    }
+    .entry-sub {
+      font-style: italic;
+      color: #444;
+      font-size: 13.5px;
+    }
+    .entry-meta {
+      font-size: 13px;
+      color: #666;
+      font-weight: 600;
+    }
+    .entry-desc {
+      font-size: 13.5px;
+      color: #444;
+      margin-top: 4px;
+      margin-bottom: 12px;
+    }
+    ul.bullet-list {
+      margin: 4px 0 12px 18px;
+      padding: 0;
+      font-size: 13.5px;
+      color: #444;
+    }
+    ul.bullet-list li {
+      margin-bottom: 4px;
+    }
+    .skills-grid {
+      display: grid;
+      grid-template-columns: 140px 1fr;
+      row-gap: 6px;
+      font-size: 13.5px;
+    }
+    .skill-cat {
+      font-weight: 600;
+      color: #1a1a2e;
+    }
+    .print-btn-bar {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .print-btn {
+      background: #0077b6;
+      color: white;
+      border: none;
+      padding: 10px 24px;
+      font-size: 14px;
+      font-weight: 600;
+      border-radius: 4px;
+      cursor: pointer;
+      box-shadow: 0 2px 8px rgba(0, 119, 182, 0.3);
+    }
+    .print-btn:hover {
+      background: #023e8a;
+    }
+    @media print {
+      body {
+        background: #fff;
+        padding: 0;
+      }
+      .resume-container {
+        box-shadow: none;
+        padding: 0;
+        max-width: 100%;
+      }
+      .print-btn-bar {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="print-btn-bar">
+    <button class="print-btn" onclick="window.print()">🖨️ Print / Save as PDF</button>
+  </div>
+
+  <div class="resume-container">
+    <div class="header-bar">
+      <div class="name-title">
+        <h1>Purva Thakare</h1>
+        <p>B.Tech Computer Science and Engineering Undergraduate</p>
+      </div>
+      <div class="contact-info">
+        <div>Bhopal, Madhya Pradesh | Nagpur, Maharashtra</div>
+        <div>📞 +91 7999282181 | ✉️ <a href="mailto:pthakare2602@gmail.com">pthakare2602@gmail.com</a></div>
+        <div>🔗 <a href="https://www.linkedin.com/in/purva-thakare-83b820320/" target="_blank">Purva Thakare | LinkedIn</a></div>
+      </div>
+    </div>
+
+    <div class="section-title">Objective</div>
+    <div class="entry-desc">
+      Motivated Computer Science undergraduate with expertise in programming languages such as Python, C, and Java, eager to join a dynamic tech team as a junior developer to leverage coding skills and innovative thinking for impactful software solutions.
+    </div>
+
+    <div class="section-title">Education</div>
+    <div style="margin-bottom: 12px;">
+      <div class="entry-row">
+        <span class="entry-main">Symbiosis Institute of Technology (SIT)</span>
+        <span class="entry-meta">Nagpur, Maharashtra</span>
+      </div>
+      <div class="entry-row">
+        <span class="entry-sub">Bachelor of Technology in Computer Science and Engineering</span>
+        <span class="entry-meta">Expected Graduation: June 2028</span>
+      </div>
+    </div>
+
+    <div style="margin-bottom: 12px;">
+      <div class="entry-row">
+        <span class="entry-main">Carmel Convent Sr. Sec. School</span>
+        <span class="entry-meta">Bhopal, Madhya Pradesh</span>
+      </div>
+      <div class="entry-row">
+        <span class="entry-sub">Kindergarten through Grade 12 (CBSE Board)</span>
+        <span class="entry-meta">Completed</span>
+      </div>
+    </div>
+
+    <div class="section-title">Technical Skills & Interests</div>
+    <div class="skills-grid">
+      <div class="skill-cat">Languages:</div>
+      <div>Python, C, Java, JavaScript, SQL / PL, HTML5, CSS3</div>
+      <div class="skill-cat">Domains & Tools:</div>
+      <div>Data Science, Machine Learning, Scikit-learn, Git, GitHub, REST APIs, Microsoft Office (Excel, Word, PowerPoint)</div>
+      <div class="skill-cat">Interests:</div>
+      <div>Web Development, Database Management Systems (DBMS), Machine Learning & Computer Vision</div>
+      <div class="skill-cat">Soft Skills:</div>
+      <div>Leadership, Team Management, Problem-Solving, Technical Communication</div>
+    </div>
+
+    <div class="section-title">Project Experience</div>
+    
+    <div style="margin-bottom: 12px;">
+      <div class="entry-row">
+        <span class="entry-main">Spotify Recommender System</span>
+        <span class="entry-meta">Jan 2025 - Apr 2025</span>
+      </div>
+      <div class="entry-desc">
+        Developed a music recommendation system utilizing Python, Scikit-learn, and the Spotify Web API to synthesize personalized playlist recommendations via vector space content-based filtering and cosine similarity computations.
+      </div>
+    </div>
+
+    <div style="margin-bottom: 12px;">
+      <div class="entry-row">
+        <span class="entry-main">Mental Health Chatbot</span>
+        <span class="entry-meta">Jul 2025 - Dec 2025</span>
+      </div>
+      <div class="entry-desc">
+        Developed an NLP-driven Mental Health Chatbot using Python and machine learning algorithms to gauge user conversational sentiment and provide empathetic, context-aware supportive responses through an intuitive user interface.
+      </div>
+    </div>
+
+    <div style="margin-bottom: 12px;">
+      <div class="entry-row">
+        <span class="entry-main">Extracting Cinematic Metadata using AI Agent</span>
+        <span class="entry-meta">Jan 2026 - Present</span>
+      </div>
+      <div class="entry-desc">
+        Architected an AI-powered cinematic metadata extraction agent utilizing Python, OpenCV computer vision, and NLP models to automate scene classification, dialogue sentiment indexing, and timestamp-synchronized video discovery.
+      </div>
+    </div>
+
+    <div style="margin-bottom: 12px;">
+      <div class="entry-row">
+        <span class="entry-main">AuraPath: An IoT-Enabled Wearable for Hazard Detection</span>
+        <span class="entry-meta">Apr 2026 - Present</span>
+      </div>
+      <div class="entry-desc">
+        Engineered AuraPath, an IoT-assisted wearable designed for multimodal hazard detection combining ultrasonic obstacle sensing, optical sensors, microcontrollers, and low-latency haptic alert mechanisms for real-time risk mitigation.
+      </div>
+    </div>
+
+    <div class="section-title">Experience & Co-Curricular Contributions</div>
+    <ul class="bullet-list">
+      <li><strong>ServiceNow Virtual Internship:</strong> Completed enterprise cloud workflow simulation and hands-on system administration modules.</li>
+      <li><strong>Smart India Hackathon (SIH):</strong> Engaged in nationwide innovation challenge developing technology solutions for real-world governance problems.</li>
+      <li><strong>College Level Hackathons:</strong> Active competitor across university hackathons, prototyping rapid web and software solutions.</li>
+      <li><strong>ACM Student Chapter Core Member:</strong> Organizing technical workshops, coding bootcamps, and developer community events at Symbiosis Institute of Technology.</li>
+    </ul>
+
+    <div class="section-title">Certifications</div>
+    <ul class="bullet-list">
+      <li><strong>Red Hat Certificate:</strong> Introduction to Python Programming (AD141)</li>
+      <li><strong>Infosys Springboard:</strong> Data Structures and Algorithms using Python - Part 1</li>
+      <li><strong>Red Hat System Administration I:</strong> (RH124 - RHA) - Version 10</li>
+    </ul>
+
+  </div>
+</body>
+</html>
